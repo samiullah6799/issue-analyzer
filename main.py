@@ -133,7 +133,6 @@ class IssueAnalyzer:
 
 
 analyzer = IssueAnalyzer()
-'''
 analyzer.getIssues()
 analyzer.analyze()
 analyzer.highestPeriods()
@@ -141,5 +140,4 @@ analyzer.getActiveUser()
 analyzer.getPopularCategory()
 analyzer.classifyIssue()
 analyzer.evaluateResults()
-'''
 analyzer.classifyIssue()
