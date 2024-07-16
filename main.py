@@ -64,6 +64,17 @@ class IssueAnalyzer:
         issues = df.groupby('month').size()
         high_periods = issues[issues > issues.mean() + 2 * issues.std()]
         print(f"Highest Time Period : {high_periods}")
+
+        plt.figure(figsize=(10,5))
+        plt.plot(issues.index.to_timestamp(), issues.values, label="Daily Issues")
+        plt.scatter(high_periods.index.to_timestamp(), high_periods.values, color='red', label='High Activity Days')
+
+        plt.title('Daily Issues')
+        plt.xlabel('Date')
+        plt.ylabel('Number of Issues')
+        plt.legend()
+        plt.grid(True)
+        plt.show()
         
     def getActiveUser(self):
         df = pd.read_csv("data.csv")
